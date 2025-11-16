@@ -1,0 +1,54 @@
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#111}
+
+:root{
+  --container: 1200px;
+  --blue-600:#4db2e6;
+  --blue-700:#3aa0d6;
+  --gray-50:#f6f8fa;
+  --gray-100:#eef2f5;
+  --text:#111;
+  --muted:#6b7280;
+}
+
+.container{max-width:var(--container);margin:0 auto;padding:0 16px}
+
+/* Header */
+.header{background:#fff}
+.header-top{display:flex;align-items:center;gap:24px;padding:18px 0}
+.brand-img{height:clamp(80px,12vw,120px);width:auto;display:block}
+
+.main-nav{display:flex;align-items:flex-start;gap:24px;flex:1;min-width:0}
+
+.nav-link{display:flex;flex-direction:column;justify-content:flex-start;gap:2px;line-height:1;text-decoration:none;color:var(--text);font-weight:800;text-transform:uppercase;letter-spacing:.3px}
+.nav-link .nav-sub{font-weight:600;color:var(--muted);text-transform:none;letter-spacing:0;font-size:12px}
+.nav-link.active{color:#000}
+
+.divider{width:1px;background:#d7dde3;margin:0 8px}
+
+/* CTAs */
+.cta{display:flex;flex-direction:column;justify-content:center;align-self:center;text-decoration:none;padding:10px 16px;border-radius:2px;background:var(--blue-600);color:#fff;font-weight:800;text-transform:uppercase;white-space:nowrap}
+.cta:hover{background:var(--blue-700)}
+.cta .cta-sub{font-weight:600;text-transform:none;opacity:.95;font-size:12px}
+
+/* Subbar */
+.subbar{background:var(--gray-50);border-top:1px solid var(--gray-100);border-bottom:1px solid var(--gray-100)}
+.subbar-inner{display:flex;gap:32px;padding:10px 0}
+.sub-link{color:#111;text-decoration:none;font-weight:700;text-transform:uppercase;font-size:12px}
+.sub-link:hover{text-decoration:underline}
+
+/* Main placeholder */
+.main{padding:32px 0}
+
+/* Responsive */
+@media (max-width: 980px){
+  .brand-img{height:clamp(64px,14vw,96px)}
+  .main-nav{gap:16px}
+  .cta{padding:8px 12px}
+}
+@media (max-width: 760px){
+  .header-top{flex-direction:column;align-items:stretch;gap:12px}
+  .main-nav{flex-wrap:wrap}
+  .divider{display:none}
+  .brand-img{margin:0 auto}
+}
