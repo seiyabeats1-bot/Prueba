@@ -66,6 +66,9 @@ html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,
     padding-right:0;
     color:inherit;
   }
+  /* Crop promo image vertically on desktop */
+  .promo-media{height:clamp(320px,36vh,440px);overflow:hidden;border-radius:8px}
+  .promo-img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
 }
 @media (max-width: 760px){
   .header-top{flex-direction:column;align-items:center;gap:12px}
